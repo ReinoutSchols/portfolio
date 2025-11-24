@@ -1,0 +1,15 @@
+---
+title: "About"
+image: Foto.jpg
+about:
+  template: jolla
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/reinout-schols-765305205/
+    - icon: github
+      text: Github
+      href: https://github.com/ReinoutSchols 
+---
+
+I am Reinout, 2nd year student at Uhasselt (master in statistics and data science). In my free time I go to the gym, love to cook and learn new things about random stuff, like full-stack development, power BI and horses.

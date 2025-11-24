@@ -1,0 +1,22 @@
+"0","#### Multiple reggressie analyse"
+"0",""
+"0","rosetta::regr("
+"0","    Intentie ~"
+"0","      Attitude_Agg+"
+"0","      Gedragscontrole_Agg + "
+"0","      Norm_Agg,"
+"0","    collinearity = TRUE,"
+"0","  data=Clean_data_16_40"
+"0",");"
+"1","Regression analysis
+  Formula: Intentie ~ Attitude_Agg + Gedragscontrole_Agg + Norm_Agg
+  Sample size: 134
+
+Significance test of the entire model (all predictors together):
+  Multiple R-squared: [.13; .39] (point estimate = 0.25, adjusted = 0.24)
+  Test for significance: F[3, 130] = 14.78, p < .001
+"
+"1","
+Raw regression coefficients (unstandardized beta values, called 'B' in SPSS):
+
+"

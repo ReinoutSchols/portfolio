@@ -1,0 +1,136 @@
+
+---
+title: "Rosalind: Translating RNA into Protein"
+date: 04/19/2024
+author: Reinout Schols
+categories: [Python, Bioinformatics, Rosalind, mRNA, Proteins]
+image: "DNA.jpg"
+include: true
+format: 
+  html:
+    code-fold: true
+    code-tools: true
+    highlight-style: github
+---
+
+## Solving Rosalind problems (bioinformatics)
+<p>
+In today's post you learn how to solve the problem:"Translating RNA into Protein", from Rosalind. Rosalind is a free platform to learn bioinformatics. The first part is a bit of theory, so make sure you understand that. After that I give hints, and at the end you can check out the whole code.
+<div>
+Source: [Link to problem on Rosalind](https://rosalind.info/problems/prot/)
+
+<h3 style="color:lightsteelblue"> What is the problem? </h3>
+<p> 
+Given: An RNA string "s" corresponding to a strand of mRNA (of length at most 10 kbp).
+
+Return: The protein string encoded by "s".
+</p>
+<h3 style="color:lightsteelblue"> Background information </h3>
+
+<h4>Key terms you need to know</h4>
+<p>
+-mRNA (Messenger RNA):
+mRNA is a single-stranded RNA molecule that carries genetic information from the DNA to the ribosome, where proteins are synthesized.
+It is composed of a sequence of nucleotides with the following bases: adenine (A), cytosine (C), guanine (G), and uracil (U).
+
+-Ribosome:
+The ribosome is a cellular structure responsible for protein synthesis.
+It 'reads' the mRNA sequence and is important in the assembly of amino acids into proteins.
+
+-tRNA (Transfer RNA):
+tRNA molecules are molecules that match amino acids to codons on the mRNA during translation. (codons are three nucleotides)
+Each tRNA carries a specific amino acid and recognizes a particular codon sequence on the mRNA via its anticodon.
+</p>
+<h4>Translation Process Simplified</h4>
+
+Start:
+The mRNA binds to a ribosome, and the process begins at the start codon "AUG,".
+ (You can see it as the start of your zipper of your jacket)
+The first tRNA molecule arrives, and binds to the start codon on the mRNA, translating the "AUG" codon from the mRNA into the amino acid "M".
+
+Elongation:
+The ribosome moves along the mRNA (zipper your jacket all towards the top), 'reading' each codon (three nucleotides) in sequence.
+Matching tRNA molecules with complementary anticodons bring the corresponding amino acids to the ribosome.
+The ribosome puts all these amino acids on one string, creating a growing polypeptide chain.
+
+End:
+When the ribosome encounters a stop codon (UAA, UAG, or UGA) on the mRNA, the process ... stops. Wow.
+The polypeptide chain is released from the ribosome.
+
+<h4 style="color:lightsteelblue"> Visual: </h3>
+Source: [By LadyofHats](https://en.wikipedia.org/wiki/Translation_(biology)#/media/File:Ribosome_mRNA_translation_en.svg)
+
+
+
+<h4>Python</h4>
+
+<p>
+So ask yourself: what needs to happen so I can translate a given string, into amino acids? 
+Well, codons need to be transformed into anticodons and eventually translating into amino acids. So find a way to check the given string, create codons, compare it with anticodons etc. 
+If you are stuck, check the hints!
+</p>
+hint1:
+```{python}
+#Loop over given mRNA string, by creating a codon variable in the for loop.
+```
+
+hint2:
+```{python}
+#Use a conditional statement based on the values of the codon and anticodon. 
+```
+
+hint3:
+```{python}
+#Break your loop when arriving at a stop codon.  
+```
+
+<p>
+Watch out! Your input in the Rosalind platform needs to be ONE line. I struggled with this and had to try it 5 times. That is why I export my solution to a file, and then upload this file. Also, make sure to code the "stop" codon with an empty string, and double check your codon_table. 
+</p>
+
+</div>
+
+<h4> Solution</h4>
+```{python}
+with open("C:/Users/reino/OneDrive/Desktop/Portfolio2/posts/RNA_To_protein/rosalind_prot.txt") as new_file:
+    mRNA = new_file.readline().strip()
+    #print(mRNA)
+    #print(len(mRNA)/3)
+
+codon_table = {"UUU":"F", "UUC":"F", "UUA":"L", "UUG":"L",
+       "UCU":"S", "UCC":"S", "UCA":"S", "UCG":"S",
+       "UAU":"Y", "UAC":"Y", "UAA":"STOP", "UAG":"STOP",
+       "UGU":"C", "UGC":"C", "UGA":"STOP", "UGG":"W",
+       "CUU":"L", "CUC":"L", "CUA":"L", "CUG":"L",
+       "CCU":"P", "CCC":"P", "CCA":"P", "CCG":"P",
+       "CAU":"H", "CAC":"H", "CAA":"Q", "CAG":"Q",
+       "CGU":"R", "CGC":"R", "CGA":"R", "CGG":"R",
+       "AUU":"I", "AUC":"I", "AUA":"I", "AUG":"M",
+       "ACU":"T", "ACC":"T", "ACA":"T", "ACG":"T",
+       "AAU":"N", "AAC":"N", "AAA":"K", "AAG":"K",
+       "AGU":"S", "AGC":"S", "AGA":"R", "AGG":"R",
+       "GUU":"V", "GUC":"V", "GUA":"V", "GUG":"V",
+       "GCU":"A", "GCC":"A", "GCA":"A", "GCG":"A",
+       "GAU":"D", "GAC":"D", "GAA":"E", "GAG":"E",
+       "GGU":"G", "GGC":"G", "GGA":"G", "GGG":"G",}
+
+
+answer = []
+for i in range(0, len(mRNA), 3):
+    codon = mRNA[i:i+3]
+    if codon in codon_table:
+        amino_acid = codon_table[codon]
+        if amino_acid == "STOP":
+            amino_acid = ""
+            break
+        answer.append(amino_acid)
+
+protein_sequence = "".join(answer)
+print(protein_sequence)
+
+with open("output_RNA_to_Protein3.txt", "w") as output_file:
+    output_file.write(protein_sequence)
+
+```
+
+

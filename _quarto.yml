@@ -1,0 +1,43 @@
+project:
+  type: website
+
+website:
+  title: "My portfolio"
+  favicon: Foto.jpg
+  page-footer:
+    center: |
+      [Contact Reinout Schols](mailto:reinout.schols@student.uhasselt.be)
+    left: |
+      Made with [Quarto](https://quarto.org/)
+    right: |
+      [Github Code Repo](https://github.com/ReinoutSchols)
+    background: "#778899"
+    
+  navbar:
+  
+    left:
+      - href: index.qmd
+        text: Home
+      - href: resume.qmd
+        text: Resume
+    
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/ReinoutSchols
+      - icon: linkedin
+        href: https://www.linkedin.com/in/reinout-schols-765305205/
+   
+    
+    
+format:
+  html:
+    theme: superhero
+    css: styles.css
+
+editor: visual
+
+publish:
+  github:
+    branch: gh-pages
+

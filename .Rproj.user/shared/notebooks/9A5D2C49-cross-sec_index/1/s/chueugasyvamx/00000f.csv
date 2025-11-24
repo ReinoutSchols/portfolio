@@ -1,0 +1,115 @@
+"0",""
+"0","#| include: false "
+"0",""
+"0","library(readr)"
+"0","library(rosetta)"
+"0","library(haven)"
+"0","library(dplyr)"
+"0","library(ggplot2)"
+"0","library(tidyverse)"
+"2","── [1mAttaching core tidyverse packages[22m ────────────────────────────────────────────────── tidyverse 2.0.0 ──
+[32m✔[39m [34mlubridate[39m 1.9.2     [32m✔[39m [34mstringr  [39m 1.5.0
+[32m✔[39m [34mpurrr    [39m 1.0.1     [32m✔[39m [34mtibble   [39m 3.1.8"
+"2","── [1mConflicts[22m ──────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+[31m✖[39m [34mdata.table[39m::[32mbetween()[39m    masks [34mdplyr[39m::between()
+[31m✖[39m [34mnlme[39m::[32mcollapse()[39m         masks [34mdplyr[39m::collapse()
+[31m✖[39m [34mMatrix[39m::[32mexpand()[39m         masks [34mtidyr[39m::expand()
+[31m✖[39m [34mmagrittr[39m::[32mextract()[39m      masks [34mpastecs[39m::extract(), [34mtidyr[39m::extract()
+[31m✖[39m [34mrstatix[39m::[32mfilter()[39m        masks [34mdplyr[39m::filter(), [34mstats[39m::filter()
+[31m✖[39m [34mdata.table[39m::[32mfirst()[39m      masks [34mpastecs[39m::first(), [34mdplyr[39m::first()
+[31m✖[39m [34mkableExtra[39m::[32mgroup_rows()[39m masks [34mdplyr[39m::group_rows()
+[31m✖[39m [34mlubridate[39m::[32mhour()[39m        masks [34mdata.table[39m::hour()
+[31m✖[39m [34mlubridate[39m::[32misoweek()[39m     masks [34mdata.table[39m::isoweek()
+[31m✖[39m [34mdplyr[39m::[32mlag()[39m             masks [34mstats[39m::lag()
+[31m✖[39m [34mdata.table[39m::[32mlast()[39m       masks [34mpastecs[39m::last(), [34mdplyr[39m::last()
+[31m✖[39m [34mlatticeExtra[39m::[32mlayer()[39m    masks [34mggplot2[39m::layer()
+[31m✖[39m [34mlubridate[39m::[32mmday()[39m        masks [34mdata.table[39m::mday()
+[31m✖[39m [34mlubridate[39m::[32mminute()[39m      masks [34mdata.table[39m::minute()
+[31m✖[39m [34mlubridate[39m::[32mmonth()[39m       masks [34mdata.table[39m::month()
+[31m✖[39m [34mMatrix[39m::[32mpack()[39m           masks [34mtidyr[39m::pack()
+[31m✖[39m [34mlubridate[39m::[32mquarter()[39m     masks [34mdata.table[39m::quarter()
+[31m✖[39m [34mcar[39m::[32mrecode()[39m            masks [34mrosetta[39m::recode(), [34mdplyr[39m::recode()
+[31m✖[39m [34mesmpack[39m::[32mrename()[39m        masks [34mdplyr[39m::rename()
+[31m✖[39m [34mlubridate[39m::[32msecond()[39m      masks [34mdata.table[39m::second()
+[31m✖[39m [34mpurrr[39m::[32mset_names()[39m       masks [34mmagrittr[39m::set_names()
+[31m✖[39m [34mpurrr[39m::[32msome()[39m            masks [34mcar[39m::some()
+[31m✖[39m [34mpurrr[39m::[32mtranspose()[39m       masks [34mdata.table[39m::transpose()
+[31m✖[39m [34mMatrix[39m::[32munpack()[39m         masks [34mtidyr[39m::unpack()
+[31m✖[39m [34mlubridate[39m::[32mwday()[39m        masks [34mdata.table[39m::wday()
+[31m✖[39m [34mlubridate[39m::[32mweek()[39m        masks [34mdata.table[39m::week()
+[31m✖[39m [34mlubridate[39m::[32myday()[39m        masks [34mdata.table[39m::yday()
+[31m✖[39m [34mlubridate[39m::[32myear()[39m        masks [34mdata.table[39m::year()
+[36mℹ[39m Use the ]8;;http://conflicted.r-lib.org/conflicted package]8;; to force all conflicts to become errors"
+"0","library(behaviorchange)"
+"2","Warning: package ‘behaviorchange’ was built under R version 4.2.3"
+"2","
+Attaching package: ‘behaviorchange’
+
+"
+"2","The following objects are masked from ‘package:ufs’:
+
+    cat0, opts, repeatStr, repStr, vecTxt, vecTxtQ, wrapVector
+
+"
+"2","The following objects are masked from ‘package:rosetta’:
+
+    cat0, opts, repeatStr, repStr, vecTxt, vecTxtQ
+
+"
+"0","library(psych)"
+"2","
+Attaching package: ‘psych’
+
+"
+"2","The following object is masked from ‘package:car’:
+
+    logit
+
+"
+"2","The following object is masked from ‘package:rosetta’:
+
+    reliability
+
+"
+"2","The following objects are masked from ‘package:ggplot2’:
+
+    %+%, alpha
+
+"
+"2","The following object is masked from ‘package:lavaan’:
+
+    cor2cov
+
+"
+"0","library(corrplot)"
+"2","corrplot 0.92 loaded
+"
+"0","library(car)"
+"0","library(EFAtools)"
+"2","Warning: package ‘EFAtools’ was built under R version 4.2.3"
+"2","
+Attaching package: ‘EFAtools’
+
+"
+"2","The following object is masked from ‘package:psych’:
+
+    KMO
+
+"
+"0","library(papaja)"
+"2","Warning: package ‘papaja’ was built under R version 4.2.3"
+"2","Loading required package: tinylabels
+"
+"2","Warning: package ‘tinylabels’ was built under R version 4.2.3"
+"2","
+Attaching package: ‘papaja’
+
+"
+"2","The following object is masked from ‘package:parameters’:
+
+    ci
+
+"
+"0","library(rempsyc)library(readr)"
+"2","Error: unexpected symbol in ""library(rempsyc)library""
+"

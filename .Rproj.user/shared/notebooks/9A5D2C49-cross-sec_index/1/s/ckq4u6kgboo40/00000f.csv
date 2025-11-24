@@ -1,0 +1,28 @@
+"0","#| include: false "
+"0",""
+"0","#Data inladen"
+"0",""
+"0","Data <- rosetta::getDat(""C:/Users/reino/OneDrive/Documents/Studiemateriaal OU/Onderzoeksvakken_OU/cross_sectioneel_onderzoek/852550750_epw.sav"")"
+"2","Warning: NOTE: an object called 'dat' already existed; I renamed it to 'dat_backup_20230727_003613'."
+"1","The data has been stored in a dataframe called '"
+"1",""
+"1","dat"
+"1",""
+"1","'. That means that if you want to repeat this command and "
+"1",""
+"1","store the dataframe with the same name, you have to use:
+
+"
+"1",""
+"1","dat"
+"1",""
+"1"," <- getData('"
+"1",""
+"1","C:/Users/reino/OneDrive/Documents/Studiemateriaal OU/Onderzoeksvakken_OU/cross_sectioneel_onderzoek/852550750_epw.sav"
+"1",""
+"1","');
+
+"
+"0","Data <- dat"
+"0",""
+"0","Data_EPW <- Data %>% filter(epw_Questions == 1)"

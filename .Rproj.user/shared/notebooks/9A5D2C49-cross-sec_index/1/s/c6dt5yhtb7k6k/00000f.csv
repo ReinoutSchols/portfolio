@@ -1,0 +1,2 @@
+"0","Model <- lm(Intentie ~ Attitude_Agg+ Norm_Agg + Gedragscontrole_Agg, Clean_data_16_40)"
+"0","plot(Model)"

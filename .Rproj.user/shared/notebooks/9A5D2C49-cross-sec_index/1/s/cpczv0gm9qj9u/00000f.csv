@@ -1,0 +1,7 @@
+"0","#| include: false "
+"0","#### Kolom voor conditie maken"
+"0",""
+"0","Data$Conditie[Data$Medicijnen == ""GeenMedicijnen"" & Data$Therapie == ""GeenTherapie""] <- ""Controle"""
+"2","Error in `$<-.data.frame`(`*tmp*`, Conditie, value = character(0)) : 
+  replacement has 0 rows, data has 846
+"

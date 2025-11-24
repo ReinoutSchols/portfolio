@@ -1,0 +1,117 @@
+
+---
+title: "Rosalind: Mendel's First Law"
+date: 04/16/2024
+author: Reinout Schols
+categories: [Python, Bioinformatics, Rosalind, Probability]
+image: "DNA.jpg"
+include: true
+---
+
+## Solving Rosalind problems (bioinformatics)
+Probabilities and python. 
+<div>
+Source: [Link to Rosalind](https://rosalind.info/problems/iprb/)
+
+<h3 style="color:lightsteelblue"> What is the problem? </h3>
+<p> 
+Given: Three positive integers k, m and n,representing a population containing k+m+n organisms: k individuals are homozygous dominant for a factor (AA), m are heterozygous (Aa), and n are homozygous recessive (aa).
+
+Return: The probability that two randomly selected mating organisms will produce an individual possessing a dominant allele (and thus displaying the dominant phenotype). Assume that any two organisms can mate.
+</p>
+<h3 style="color:lightsteelblue"> How to solve this problem? </h3>
+<p>
+We need to calculate the probability of getting one dominant allel, out of the given population. I struggle with abstract math, so I always think of an example, e.g. two German (AA), two Belgian (Aa) and two Dutch (aa) people meet in a bar. What needs to happen so they reproduce a kid with a dominant allel, when they mingle at random?
+ (Lets say that the dominant allel stands for bad breath, we don't want this for our kids, but this is what they ask to calculate)
+</p>
+
+<h3 style="color:lightsteelblue"> Punnett square </h3>
+
+<p>
+- First we take a look at the possible outcomes with Punnet squares.  
+The possible resulting kids are:
+
+        German x Belgian (P(no A) = 0) (always smelly kid)
+|   |   | A  | A  |
+|---|---|----|----|
+|   | A | AA | AA |
+|   | a | Aa | Aa |
+
+        German x Dutch 
+|   |   | A  | A  |
+|---|---|----|----|
+|   | a | Aa | Aa|
+|   | a | Aa | Aa |
+- (P(no A) = 0) (always smelly kid) 
+- As you can see, Germans are not favorable in this fictive story.
+
+        Belgian x Belgian
+|   |   | A  | a  |
+|---|---|----|----|
+|   | A | AA | Aa |
+|   | a | aA | aa |
+- Belgians have a P(no A = 0.25) of having a kid with no stinky breath. 
+
+        Belgian x Dutch
+|   |   | A  | a  |
+|---|---|----|----|
+|   | a | Aa | aa |
+|   | a | Aa | aa |
+- When the Dutch mix with someone from Belgium the P(no A = 0.5). So 50% chance of having a kid without a stinky breath.
+
+        Dutch x Dutch
+|   |   | a  | a  |
+|---|---|----|----|
+|   | a | aa | aa |
+|   | a | aa | aa |
+- When the Dutch have fun, the P(no A = 1). So always fresh teeth. 
+
+So remember, to have a smelly breath, the kid has to have one A at least.
+This is the same as calculating 1 - the probability of having no A at all (aa).
+</p>
+
+<p>
+Now the question is, how to know what kids are possible with a given amount of parents. 
+At the start, all adults are available. Let's say a Belgian makes the first move and the total amount of adults are 6. This means there is a 1/6 chance. Then we need another adult, so now there are 5 adults left for the Belgian to pick from. Remember, we want a kid without A, so we cannot go for a German partner. Se we can go for a Belgian one (1 remaining out of 5), or a Dutch (2 remaining out of 5). And then we can just do 1/6 * 1/5 OR 2/5 * P(no A). This needs to happen for each scenario (Dutchie making the first move etc.)
+
+The P(no A) was calculated above, so now we can write python!
+</p>
+</div>
+
+
+```{python}
+with open("C:/Users/reino/OneDrive/Desktop/Portfolio2/posts/Mendel_Rosalind_Post/rosalind_iprb.txt") as new_file:
+    #Read in file and split the numbers, than transform them into floats. 
+    numbers = new_file.read().split()
+    L = [float(i) for i in numbers]
+
+G = L[0]
+B = L[1]
+D = L[2]
+
+def dominant_probability(G, B, D):
+    total = G + B + D
+    # Calculate P(No A) when two Belgians are mingling:
+    P_heterozygote = (B / total) * ((B - 1) / (total - 1)) * 0.25
+
+    # Calculate P(No A) when two Dutchies are mingling:
+    P_recessive = (D / total) * ((D - 1) / (total - 1)) * 1
+
+    # Calculate P(No A) when A Belgian and a Dutch are mingling:
+    P_hetero_recessive = ((B / total) * (D / (total - 1)) + (D / total) * (B / (total - 1))) * 0.5
+
+    #Calculate probability of having no A (summing them):
+    P_No_A = P_heterozygote + P_recessive + P_hetero_recessive
+
+    # Calculate the Probability of having a dominant allel
+    P_A = 1 - P_No_A
+    print(round(P_A, 5))
+
+dominant_probability(G, B, D)
+```
+
+
+<p>
+Conclusion: in my dataset (G=30, B=21, D=30) the Probability of having a kid WITH a smelly breath (with a dominant allel) is 
+P(at least one A =  0.75231). This means they need to start selling mouthwash and chewing gum in bars!
+</p>

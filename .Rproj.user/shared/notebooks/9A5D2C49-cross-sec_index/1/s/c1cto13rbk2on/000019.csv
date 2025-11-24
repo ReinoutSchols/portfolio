@@ -1,0 +1,5 @@
+"0",""
+"0",""
+"0","# attitude"
+"0","ggplot(Clean_data_16_40, aes(epw_AttDirect_pleas)) +  "
+"0","  geom_histogram()  + theme_apa() + labs(y=""Count"") + scale_y_continuous(expand = c(0, 0))"

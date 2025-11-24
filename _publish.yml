@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 3b28fe54-6449-40bf-a08c-be68de8d0b28
+      url: 'https://reinout-schols.quarto.pub/reinout-schols'

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Hi, I’m Reinout – Reinout Schols | Statistician &amp; Data Scientist</title>
+<title>Master’s Thesis – Reinout Schols | Statistician &amp; Data Scientist</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-94509742a1c2994d3b033684dcbbb978.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-05ed39f7929eb5e47867b0ff2e0f5a03.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -92,11 +121,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./MasterThesis.html"> 
+    <a class="nav-link active" href="./MasterThesis.html" aria-current="page"> 
 <span class="menu-text">Thesis</span></a>
   </li>  
   <li class="nav-item">
@@ -125,13 +154,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
-      <h1 class="title">Hi, I’m Reinout</h1>
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Master’s Thesis</h1>
+            <p class="subtitle lead">Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -142,43 +172,129 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#benchmarking-protein-ai-models-in-pharmacogenomics" id="toc-benchmarking-protein-ai-models-in-pharmacogenomics" class="nav-link active" data-scroll-target="#benchmarking-protein-ai-models-in-pharmacogenomics">Benchmarking Protein AI Models in Pharmacogenomics</a>
+  <ul class="collapse">
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a>
+  <ul class="collapse">
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
+  </ul></li>
+  <li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link" data-scroll-target="#statistical-analysis">Statistical analysis</a></li>
+  <li><a href="#main-findings" id="toc-main-findings" class="nav-link" data-scroll-target="#main-findings">Main findings</a>
+  <ul class="collapse">
+  <li><a href="#high-performance-on-continuous-enzymatic-activity-assays" id="toc-high-performance-on-continuous-enzymatic-activity-assays" class="nav-link" data-scroll-target="#high-performance-on-continuous-enzymatic-activity-assays">1. High Performance on Continuous Enzymatic Activity Assays</a></li>
+  <li><a href="#zero-shot-plms-match-domain-specific-ensembles-on-clinical-tasks" id="toc-zero-shot-plms-match-domain-specific-ensembles-on-clinical-tasks" class="nav-link" data-scroll-target="#zero-shot-plms-match-domain-specific-ensembles-on-clinical-tasks">2. Zero-shot PLMs Match Domain-Specific Ensembles on Clinical Tasks</a></li>
+  </ul></li>
+  <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">Key findings</a></li>
+  <li><a href="#engineering-infrastructure" id="toc-engineering-infrastructure" class="nav-link" data-scroll-target="#engineering-infrastructure">Engineering &amp; Infrastructure</a></li>
+  <li><a href="#gallery" id="toc-gallery" class="nav-link" data-scroll-target="#gallery">Gallery</a></li>
+  <li><a href="#repository" id="toc-repository" class="nav-link" data-scroll-target="#repository">Repository</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
-<p>I like solving problems with data.</p>
-<p>I recently graduated with a Master’s degree in Statistics &amp; Data Science from UHasselt. My interests range from statistical modelling and machine learning to data visualization and bioinformatics. I enjoy exploring new ideas, building reproducible analyses, and turning complex results into something people can actually use.</p>
-<p>This website contains some of the projects I’ve worked on, including interactive dashboards, machine learning research, and other data science projects.</p>
-<p>One example is an interactive dashboard on air pollution that Sophie and I created for a data visualization course: <a href="https://dataviz-5zhh.onrender.com/" class="uri">https://dataviz-5zhh.onrender.com/</a></p>
-<section id="some-snapshots" class="level3">
-<h3 class="anchored" data-anchor-id="some-snapshots">Some snapshots</h3>
-<div style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
-<div style="text-align: center;">
-<p>
-Before I fell in the water while sampling snails
-</p>
-<p><img src="sampling.jpg" width="300px"></p>
-</div>
-<div style="text-align: center;">
-<p>
-Playing cornhole!
-</p>
-<p><img src="cornhole.jpg" width="300px"></p>
-</div>
-<div style="text-align: center;">
-<p>
-I love animals
-</p>
-<p><img src="roosje.jpg" width="300px"></p>
-</div>
-</div>
+<section id="benchmarking-protein-ai-models-in-pharmacogenomics" class="level1">
+<h1>Benchmarking Protein AI Models in Pharmacogenomics</h1>
+<p><strong>Master’s Thesis (2026)</strong></p>
+<p><strong>Technologies</strong></p>
+<p><code>Python</code> <code>PyTorch</code> <code>pandas</code> <code>NumPy</code> <code>Git</code> <code>GitHub</code> <code>Linux</code> <code>Jupyter</code> <code>VSC</code> <code>HPC</code> <code>Statistics</code> <code>matplotlib</code></p>
+<p><strong>Repository</strong></p>
+<p><a href="https://github.com/ReinoutSchols/PGx-benchmark-protein-models">GitHub Repository</a></p>
+<hr>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Pharmacogenomics (PGx) aims to understand how genetic variation influences drug response. A major challenge in the field is the interpretation of rare and novel variants, many of which lack experimental or clinical annotations.</p>
+<p>Traditionally, PGx variant effect prediction has relied on <strong>specialized</strong> pharmacogenomic ensembles and domain-specific prediction frameworks. This thesis revisits that working assumption by evaluating whether zero-shot state-of-the-art protein models can achieve comparable or superior performance without explicit PGx-specific training.</p>
+<hr>
+<section id="research-question" class="level3">
+<h3 class="anchored" data-anchor-id="research-question">Research question</h3>
+<blockquote class="blockquote">
+<p>Can modern protein language models predict pharmacogenomic variant effects in a zero-shot setting without pharmacogenomic-specific training?</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="statistical-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-analysis">Statistical analysis</h2>
+<p>Methods used:</p>
+<ul>
+<li>BCa bootstrap confidence intervals</li>
+<li>Permutation hypothesis testing</li>
+<li>Multiplicity correction</li>
+<li>Bootstrapped AUROC and PR metrics</li>
+</ul>
+<hr>
+</section>
+<section id="main-findings" class="level2">
+<h2 class="anchored" data-anchor-id="main-findings">Main findings</h2>
+<section id="high-performance-on-continuous-enzymatic-activity-assays" class="level3">
+<h3 class="anchored" data-anchor-id="high-performance-on-continuous-enzymatic-activity-assays">1. High Performance on Continuous Enzymatic Activity Assays</h3>
+<p><img src="DMS-benchmark.png" class="img-fluid"> Top zero-shot models capture strong functional signals in key metabolizing enzymes, achieving peak Spearman correlations between <strong><span class="math inline">\(\rho = 0.58\)</span> and <span class="math inline">\(0.72\)</span></strong> on <em>CYP2C9</em> and <em>NUDT15</em></p>
+</section>
+<section id="zero-shot-plms-match-domain-specific-ensembles-on-clinical-tasks" class="level3">
+<h3 class="anchored" data-anchor-id="zero-shot-plms-match-domain-specific-ensembles-on-clinical-tasks">2. Zero-shot PLMs Match Domain-Specific Ensembles on Clinical Tasks</h3>
+<p><img src="star-allele-benchmark.png" class="img-fluid"> In clinical star-allele benchmarks, zero-shot models (CPT-1, AlphaMissense, AIDO.Protein-RAG) achieved <strong>macro AUROCs up to 0.86</strong>, matching specialized PGx frameworks like APF2 and PharmGScore across multiple functional tasks.</p>
+<hr>
+</section>
+</section>
+<section id="key-findings" class="level2">
+<h2 class="anchored" data-anchor-id="key-findings">Key findings</h2>
+<ul>
+<li>Zero-shot protein models achieve moderate to strong correlations with experimental DMS measurements across multiple pharmacogenes.</li>
+<li>AIDO.Protein-RAG, CPT-1, and AlphaMissense consistently rank among the best-performing predictors.</li>
+<li>Several protein models match or outperform specialized PGx prediction frameworks on clinical variant classification tasks.</li>
+</ul>
+<hr>
+</section>
+<section id="engineering-infrastructure" class="level2">
+<h2 class="anchored" data-anchor-id="engineering-infrastructure">Engineering &amp; Infrastructure</h2>
+<ul>
+<li><p><strong>HPC Scale:</strong> Executed zero-shot inference for 12 large models (including 16B parameter transformers like AIDO.Protein-RAG) on NVIDIA H100 GPUs using the Flemish Supercomputer (VSC).</p></li>
+<li><p><strong>Workflow Automation:</strong> Orchestrated reproducible data pipelines using Bash, Python, Jupyter Notebooks, Conda, and SLURM workload management.</p></li>
+</ul>
+<hr>
+</section>
+<section id="gallery" class="level2">
+<h2 class="anchored" data-anchor-id="gallery">Gallery</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Figure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="heatmap-CYP2C9.png" class="img-fluid"></td>
+<td>Positional functional landscape of CYP2C9. Each cell shows the</td>
+</tr>
+</tbody>
+</table>
+<p>experimentally measured effect of amino acid substitutions, and missing data are shown in gray. Colors represent functional classes derived from the DMS assay thresholds | | <img src="heatmap-AUC.png" class="img-fluid"> | The heatmap displays AUROC values for each gene-model pair. Labels on the left track the variant distribution (normal and increased vs.&nbsp;decreased and no function) for each gene. | | <img src="AUROC-CYP2C9.png" class="img-fluid"> | ROC curves for classifying extreme CYP2C9 enzyme activity phenotypes using DMS activity thresholds (&lt; 0.2 vs.&nbsp;&gt; 0.8).|</p>
+<hr>
+</section>
+<section id="repository" class="level2">
+<h2 class="anchored" data-anchor-id="repository">Repository</h2>
+<p><a href="https://github.com/ReinoutSchols/PGx-benchmark-protein-models">GitHub Repository</a></p>
 <hr>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

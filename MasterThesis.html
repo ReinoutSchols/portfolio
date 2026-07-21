@@ -176,13 +176,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#benchmarking-protein-ai-models-in-pharmacogenomics" id="toc-benchmarking-protein-ai-models-in-pharmacogenomics" class="nav-link active" data-scroll-target="#benchmarking-protein-ai-models-in-pharmacogenomics">Benchmarking Protein AI Models in Pharmacogenomics</a>
-  <ul class="collapse">
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a>
   <ul class="collapse">
   <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
   </ul></li>
-  <li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link" data-scroll-target="#statistical-analysis">Statistical analysis</a></li>
+  <li><a href="#my-contribution" id="toc-my-contribution" class="nav-link" data-scroll-target="#my-contribution">My contribution</a></li>
+  <li><a href="#methods-and-materials" id="toc-methods-and-materials" class="nav-link" data-scroll-target="#methods-and-materials">Methods and Materials</a></li>
   <li><a href="#main-findings" id="toc-main-findings" class="nav-link" data-scroll-target="#main-findings">Main findings</a>
   <ul class="collapse">
   <li><a href="#high-performance-on-continuous-enzymatic-activity-assays" id="toc-high-performance-on-continuous-enzymatic-activity-assays" class="nav-link" data-scroll-target="#high-performance-on-continuous-enzymatic-activity-assays">1. High Performance on Continuous Enzymatic Activity Assays</a></li>
@@ -192,7 +191,6 @@ window.Quarto = {
   <li><a href="#engineering-infrastructure" id="toc-engineering-infrastructure" class="nav-link" data-scroll-target="#engineering-infrastructure">Engineering &amp; Infrastructure</a></li>
   <li><a href="#gallery" id="toc-gallery" class="nav-link" data-scroll-target="#gallery">Gallery</a></li>
   <li><a href="#repository" id="toc-repository" class="nav-link" data-scroll-target="#repository">Repository</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -203,18 +201,19 @@ window.Quarto = {
 
 
 
-<section id="benchmarking-protein-ai-models-in-pharmacogenomics" class="level1">
-<h1>Benchmarking Protein AI Models in Pharmacogenomics</h1>
-<p><strong>Master’s Thesis (2026)</strong></p>
 <p><strong>Technologies</strong></p>
 <p><code>Python</code> <code>PyTorch</code> <code>pandas</code> <code>NumPy</code> <code>Git</code> <code>GitHub</code> <code>Linux</code> <code>Jupyter Notebook</code> <code>VSC</code> <code>HPC</code> <code>Statistics</code> <code>matplotlib</code> <code>SLURM</code> <code>R</code></p>
 <p><strong>Repository</strong></p>
 <p><a href="https://github.com/ReinoutSchols/PGx-benchmark-protein-models">GitHub Repository</a></p>
+<p><strong>Location</strong></p>
+<p>Completed my master’s thesis and internship at Jessa Hospital in Hasselt.</p>
 <hr>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>Pharmacogenomics (PGx) aims to understand how genetic variation influences drug response. A major challenge in the field is the interpretation of rare and novel variants, many of which lack experimental or clinical annotations.</p>
-<p>Traditionally, PGx variant effect prediction has relied on <strong>specialized</strong> pharmacogenomic ensembles and domain-specific prediction frameworks. This thesis revisits that working assumption by evaluating whether zero-shot state-of-the-art protein models can achieve comparable or superior performance without explicit PGx-specific training.</p>
+<p>Pharmacogenomics (PGx) aims to understand how genetic variation influences drug response. <img src="overview-PGx.png" class="img-fluid quarto-figure quarto-figure-center" style="width:60.0%"></p>
+<p>Ideally, each individual receives a drug tailored to its genetic profile. However, a major challenge is the interpretation of rare and novel variants, many of which lack experimental or clinical annotations.</p>
+<p>Current approaches rely on models specifically trained for PGx tasks. This thesis investigated an emerging and under-explored direction: whether general protein language models, without PGx-specific training, can predict pharmacogenomic variant effects through zero-shot inference.</p>
+<p>To my knowledge, this represents the first systematic evaluations of large-scale protein language models for PGx variant effect prediction across both experimental and clinical benchmarks.</p>
 <hr>
 <section id="research-question" class="level3">
 <h3 class="anchored" data-anchor-id="research-question">Research question</h3>
@@ -224,14 +223,26 @@ window.Quarto = {
 <hr>
 </section>
 </section>
-<section id="statistical-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="statistical-analysis">Statistical analysis</h2>
-<p>Methods used:</p>
+<section id="my-contribution" class="level2">
+<h2 class="anchored" data-anchor-id="my-contribution">My contribution</h2>
+<p>I independently developed and executed this research project from initial idea to the final report.</p>
+<p>Key contributions: - Defined the research direction and formulated the central research question. - Designed the benchmarking framework for evaluating protein language models on pharmacogenomic tasks. - Developed reproducible data processing and evaluation pipelines. - Implemented statistical validation methods and comparative analyses. - Performed large-scale zero-shot inference experiments on HPC infrastructure. - Interpreted model performance and translated computational results into biological insights.</p>
+<p>The project required independent research, technical implementation, and collaboration with academic and clinical supervisors.</p>
+<hr>
+</section>
+<section id="methods-and-materials" class="level2">
+<h2 class="anchored" data-anchor-id="methods-and-materials">Methods and Materials</h2>
+<p>Methods:</p>
 <ul>
 <li>BCa bootstrap confidence intervals</li>
-<li>Permutation hypothesis testing</li>
+<li>Permutation based hypothesis testing</li>
 <li>Multiplicity correction</li>
 <li>Bootstrapped AUROC and PR metrics</li>
+</ul>
+<p>Materials:</p>
+<ul>
+<li>Open-source high-throughput experiments (DMS assays) -&gt; continuous</li>
+<li>Open-source clinical annotations relevant to PGx -&gt; categorical</li>
 </ul>
 <hr>
 </section>
@@ -260,17 +271,17 @@ window.Quarto = {
 <section id="key-findings" class="level2">
 <h2 class="anchored" data-anchor-id="key-findings">Key findings</h2>
 <ul>
-<li>Zero-shot protein models achieve moderate to strong correlations with experimental DMS measurements across multiple pharmacogenes.</li>
+<li>Zero-shot protein models achieve <strong>moderate to strong</strong> correlations with experimental DMS measurements across multiple pharmacogenes.</li>
 <li>AIDO.Protein-RAG, CPT-1, and AlphaMissense consistently rank among the best-performing predictors.</li>
-<li>Several protein models match or outperform specialized PGx prediction frameworks on clinical variant classification tasks.</li>
+<li>Several protein models <strong>match</strong> or <strong>outperform</strong> specialized PGx prediction frameworks on clinical variant classification tasks.</li>
 </ul>
 <hr>
 </section>
 <section id="engineering-infrastructure" class="level2">
 <h2 class="anchored" data-anchor-id="engineering-infrastructure">Engineering &amp; Infrastructure</h2>
 <ul>
-<li><strong>HPC Scale:</strong> Executed zero-shot inference for 12 large models (including 16B parameter transformers like AIDO.Protein-RAG) on NVIDIA H100 GPUs using the Flemish Supercomputer (VSC).</li>
-<li><strong>Workflow Automation:</strong> Orchestrated reproducible data pipelines using Bash, Python, Jupyter Notebooks, Conda, and SLURM workload management.</li>
+<li><strong>HPC Scale:</strong> Executed zero-shot inference for 12 large protein models (including 16B parameter models like AIDO.Protein-RAG) on NVIDIA H100 GPUs using the Flemish Supercomputer (VSC).</li>
+<li><strong>Workflow Automation:</strong> Created reproducible data pipelines using Bash, Python, Jupyter Notebooks, Conda, and SLURM scripts.</li>
 </ul>
 <hr>
 </section>
@@ -289,16 +300,16 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><img src="heatmap-CYP2C9.png" class="img-fluid" width="250"></td>
+<td style="text-align: left;"><img src="heatmap-CYP2C9.png" class="img-fluid" width="500"></td>
 <td style="text-align: left;">Positional functional landscape of CYP2C9. Each cell shows the experimentally measured effect of amino acid substitutions, and missing data are shown in gray. Colors represent functional classes derived from the DMS assay thresholds.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><img src="heatmap-AUC.png" class="img-fluid" width="250"></td>
+<td style="text-align: left;"><img src="heatmap-AUC.png" class="img-fluid" width="500"></td>
 <td style="text-align: left;">The heatmap displays AUROC values for each gene-model pair. Labels on the left track the variant distribution (normal and increased vs.&nbsp;decreased and no function) for each gene.</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><img src="AUROC-CYP2C9.png" class="img-fluid" width="250"></td>
-<td style="text-align: left;">ROC curves for classifying extreme CYP2C9 enzyme activity phenotypes using DMS activity thresholds (&lt; 0.2 vs.&nbsp;&gt; 0.8).</td>
+<td style="text-align: left;"><img src="AUROC-CYP2C9.png" class="img-fluid" width="500"></td>
+<td style="text-align: left;">ROC curves for classifying extreme CYP2C9 enzyme activity phenotypes using DMS activity thresholds (&lt; 0.2 vs.&nbsp;&gt; 0.8). Top performing models achieve <span class="math display">\[\approx\]</span> 0.94 AUC.</td>
 </tr>
 </tbody>
 </table>
@@ -309,7 +320,6 @@ window.Quarto = {
 <p><a href="https://github.com/ReinoutSchols/PGx-benchmark-protein-models">GitHub Repository</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -53,56 +53,63 @@
     "href": "MasterThesis.html",
     "title": "Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models",
     "section": "",
-    "text": "Master’s Thesis (2026)\nTechnologies\nPython PyTorch pandas NumPy Git GitHub Linux Jupyter Notebook VSC HPC Statistics matplotlib SLURM R\nRepository\nGitHub Repository\n\n\n\nPharmacogenomics (PGx) aims to understand how genetic variation influences drug response. A major challenge in the field is the interpretation of rare and novel variants, many of which lack experimental or clinical annotations.\nTraditionally, PGx variant effect prediction has relied on specialized pharmacogenomic ensembles and domain-specific prediction frameworks. This thesis revisits that working assumption by evaluating whether zero-shot state-of-the-art protein models can achieve comparable or superior performance without explicit PGx-specific training.\n\n\n\n\nCan modern protein language models predict pharmacogenomic variant effects in a zero-shot setting without pharmacogenomic-specific training?\n\n\n\n\n\n\nMethods used:\n\nBCa bootstrap confidence intervals\nPermutation hypothesis testing\nMultiplicity correction\nBootstrapped AUROC and PR metrics\n\n\n\n\n\n\n\n\n\n\n\n\nTop zero-shot models capture strong functional signals in key metabolizing enzymes, achieving peak Spearman correlations between \\(\\rho = 0.58\\) and \\(0.72\\) on CYP2C9 and NUDT15.\n\n\n\n\n\n\n\n\nIn clinical star-allele benchmarks, zero-shot models (CPT-1, AlphaMissense, AIDO.Protein-RAG) achieved macro AUROCs up to 0.86, matching specialized PGx frameworks like APF2 and PharmGScore across multiple functional tasks.\n\n\n\n\n\n\nZero-shot protein models achieve moderate to strong correlations with experimental DMS measurements across multiple pharmacogenes.\nAIDO.Protein-RAG, CPT-1, and AlphaMissense consistently rank among the best-performing predictors.\nSeveral protein models match or outperform specialized PGx prediction frameworks on clinical variant classification tasks.\n\n\n\n\n\n\nHPC Scale: Executed zero-shot inference for 12 large models (including 16B parameter transformers like AIDO.Protein-RAG) on NVIDIA H100 GPUs using the Flemish Supercomputer (VSC).\nWorkflow Automation: Orchestrated reproducible data pipelines using Bash, Python, Jupyter Notebooks, Conda, and SLURM workload management.\n\n\n\n\n\n\n\n\n\n\n\n\nFigure\nDescription\n\n\n\n\n\nPositional functional landscape of CYP2C9. Each cell shows the experimentally measured effect of amino acid substitutions, and missing data are shown in gray. Colors represent functional classes derived from the DMS assay thresholds.\n\n\n\nThe heatmap displays AUROC values for each gene-model pair. Labels on the left track the variant distribution (normal and increased vs. decreased and no function) for each gene.\n\n\n\nROC curves for classifying extreme CYP2C9 enzyme activity phenotypes using DMS activity thresholds (&lt; 0.2 vs. &gt; 0.8).\n\n\n\n\n\n\n\nGitHub Repository"
+    "text": "Technologies\nPython PyTorch pandas NumPy Git GitHub Linux Jupyter Notebook VSC HPC Statistics matplotlib SLURM R\nRepository\nGitHub Repository\nLocation\nCompleted my master’s thesis and internship at Jessa Hospital in Hasselt."
   },
   {
     "objectID": "MasterThesis.html#summary",
     "href": "MasterThesis.html#summary",
     "title": "Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models",
-    "section": "",
-    "text": "Pharmacogenomics (PGx) aims to understand how genetic variation influences drug response. A major challenge in the field is the interpretation of rare and novel variants, many of which lack experimental or clinical annotations.\nTraditionally, PGx variant effect prediction has relied on specialized pharmacogenomic ensembles and domain-specific prediction frameworks. This thesis revisits that working assumption by evaluating whether zero-shot state-of-the-art protein models can achieve comparable or superior performance without explicit PGx-specific training.\n\n\n\n\nCan modern protein language models predict pharmacogenomic variant effects in a zero-shot setting without pharmacogenomic-specific training?"
+    "section": "Summary",
+    "text": "Summary\nPharmacogenomics (PGx) aims to understand how genetic variation influences drug response. \nIdeally, each individual receives a drug tailored to its genetic profile. However, a major challenge is the interpretation of rare and novel variants, many of which lack experimental or clinical annotations.\nCurrent approaches rely on models specifically trained for PGx tasks. This thesis investigated an emerging and under-explored direction: whether general protein language models, without PGx-specific training, can predict pharmacogenomic variant effects through zero-shot inference.\nTo my knowledge, this represents the first systematic evaluations of large-scale protein language models for PGx variant effect prediction across both experimental and clinical benchmarks.\n\n\nResearch question\n\nCan modern protein language models predict pharmacogenomic variant effects in a zero-shot setting without pharmacogenomic-specific training?"
   },
   {
-    "objectID": "MasterThesis.html#statistical-analysis",
-    "href": "MasterThesis.html#statistical-analysis",
+    "objectID": "MasterThesis.html#my-contribution",
+    "href": "MasterThesis.html#my-contribution",
     "title": "Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models",
-    "section": "",
-    "text": "Methods used:\n\nBCa bootstrap confidence intervals\nPermutation hypothesis testing\nMultiplicity correction\nBootstrapped AUROC and PR metrics"
+    "section": "My contribution",
+    "text": "My contribution\nI independently developed and executed this research project from initial idea to the final report.\nKey contributions: - Defined the research direction and formulated the central research question. - Designed the benchmarking framework for evaluating protein language models on pharmacogenomic tasks. - Developed reproducible data processing and evaluation pipelines. - Implemented statistical validation methods and comparative analyses. - Performed large-scale zero-shot inference experiments on HPC infrastructure. - Interpreted model performance and translated computational results into biological insights.\nThe project required independent research, technical implementation, and collaboration with academic and clinical supervisors."
+  },
+  {
+    "objectID": "MasterThesis.html#methods-and-materials",
+    "href": "MasterThesis.html#methods-and-materials",
+    "title": "Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models",
+    "section": "Methods and Materials",
+    "text": "Methods and Materials\nMethods:\n\nBCa bootstrap confidence intervals\nPermutation based hypothesis testing\nMultiplicity correction\nBootstrapped AUROC and PR metrics\n\nMaterials:\n\nOpen-source high-throughput experiments (DMS assays) -&gt; continuous\nOpen-source clinical annotations relevant to PGx -&gt; categorical"
   },
   {
     "objectID": "MasterThesis.html#main-findings",
     "href": "MasterThesis.html#main-findings",
     "title": "Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models",
-    "section": "",
-    "text": "Top zero-shot models capture strong functional signals in key metabolizing enzymes, achieving peak Spearman correlations between \\(\\rho = 0.58\\) and \\(0.72\\) on CYP2C9 and NUDT15.\n\n\n\n\n\n\n\n\nIn clinical star-allele benchmarks, zero-shot models (CPT-1, AlphaMissense, AIDO.Protein-RAG) achieved macro AUROCs up to 0.86, matching specialized PGx frameworks like APF2 and PharmGScore across multiple functional tasks."
+    "section": "Main findings",
+    "text": "Main findings\n\n1. High Performance on Continuous Enzymatic Activity Assays\n\n\n\n\n\nTop zero-shot models capture strong functional signals in key metabolizing enzymes, achieving peak Spearman correlations between \\(\\rho = 0.58\\) and \\(0.72\\) on CYP2C9 and NUDT15.\n\n\n2. Zero-shot PLMs Match Domain-Specific Ensembles on Clinical Tasks\n\n\n\n\n\nIn clinical star-allele benchmarks, zero-shot models (CPT-1, AlphaMissense, AIDO.Protein-RAG) achieved macro AUROCs up to 0.86, matching specialized PGx frameworks like APF2 and PharmGScore across multiple functional tasks."
   },
   {
     "objectID": "MasterThesis.html#key-findings",
     "href": "MasterThesis.html#key-findings",
     "title": "Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models",
-    "section": "",
-    "text": "Zero-shot protein models achieve moderate to strong correlations with experimental DMS measurements across multiple pharmacogenes.\nAIDO.Protein-RAG, CPT-1, and AlphaMissense consistently rank among the best-performing predictors.\nSeveral protein models match or outperform specialized PGx prediction frameworks on clinical variant classification tasks."
+    "section": "Key findings",
+    "text": "Key findings\n\nZero-shot protein models achieve moderate to strong correlations with experimental DMS measurements across multiple pharmacogenes.\nAIDO.Protein-RAG, CPT-1, and AlphaMissense consistently rank among the best-performing predictors.\nSeveral protein models match or outperform specialized PGx prediction frameworks on clinical variant classification tasks."
   },
   {
     "objectID": "MasterThesis.html#engineering-infrastructure",
     "href": "MasterThesis.html#engineering-infrastructure",
     "title": "Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models",
-    "section": "",
-    "text": "HPC Scale: Executed zero-shot inference for 12 large models (including 16B parameter transformers like AIDO.Protein-RAG) on NVIDIA H100 GPUs using the Flemish Supercomputer (VSC).\nWorkflow Automation: Orchestrated reproducible data pipelines using Bash, Python, Jupyter Notebooks, Conda, and SLURM workload management."
+    "section": "Engineering & Infrastructure",
+    "text": "Engineering & Infrastructure\n\nHPC Scale: Executed zero-shot inference for 12 large protein models (including 16B parameter models like AIDO.Protein-RAG) on NVIDIA H100 GPUs using the Flemish Supercomputer (VSC).\nWorkflow Automation: Created reproducible data pipelines using Bash, Python, Jupyter Notebooks, Conda, and SLURM scripts."
   },
   {
     "objectID": "MasterThesis.html#gallery",
     "href": "MasterThesis.html#gallery",
     "title": "Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models",
-    "section": "",
-    "text": "Figure\nDescription\n\n\n\n\n\nPositional functional landscape of CYP2C9. Each cell shows the experimentally measured effect of amino acid substitutions, and missing data are shown in gray. Colors represent functional classes derived from the DMS assay thresholds.\n\n\n\nThe heatmap displays AUROC values for each gene-model pair. Labels on the left track the variant distribution (normal and increased vs. decreased and no function) for each gene.\n\n\n\nROC curves for classifying extreme CYP2C9 enzyme activity phenotypes using DMS activity thresholds (&lt; 0.2 vs. &gt; 0.8)."
+    "section": "Gallery",
+    "text": "Gallery\n\n\n\n\n\n\n\nFigure\nDescription\n\n\n\n\n\nPositional functional landscape of CYP2C9. Each cell shows the experimentally measured effect of amino acid substitutions, and missing data are shown in gray. Colors represent functional classes derived from the DMS assay thresholds.\n\n\n\nThe heatmap displays AUROC values for each gene-model pair. Labels on the left track the variant distribution (normal and increased vs. decreased and no function) for each gene.\n\n\n\nROC curves for classifying extreme CYP2C9 enzyme activity phenotypes using DMS activity thresholds (&lt; 0.2 vs. &gt; 0.8). Top performing models achieve \\[\\approx\\] 0.94 AUC."
   },
   {
     "objectID": "MasterThesis.html#repository",
     "href": "MasterThesis.html#repository",
     "title": "Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models",
-    "section": "",
-    "text": "GitHub Repository"
+    "section": "Repository",
+    "text": "Repository\nGitHub Repository"
   },
   {
     "objectID": "index.html",

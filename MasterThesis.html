@@ -208,7 +208,7 @@ window.Quarto = {
 <h1>Benchmarking Protein AI Models in Pharmacogenomics</h1>
 <p><strong>Master’s Thesis (2026)</strong></p>
 <p><strong>Technologies</strong></p>
-<p><code>Python</code> <code>PyTorch</code> <code>pandas</code> <code>NumPy</code> <code>Git</code> <code>GitHub</code> <code>Linux</code> <code>Jupyter</code> <code>VSC</code> <code>HPC</code> <code>Statistics</code> <code>matplotlib</code></p>
+<p><code>Python</code> <code>PyTorch</code> <code>pandas</code> <code>NumPy</code> <code>Git</code> <code>GitHub</code> <code>Linux</code> <code>Jupyter Notebook</code> <code>VSC</code> <code>HPC</code> <code>Statistics</code> <code>matplotlib</code> <code>SLURM</code> <code>R</code></p>
 <p><strong>Repository</strong></p>
 <p><a href="https://github.com/ReinoutSchols/PGx-benchmark-protein-models">GitHub Repository</a></p>
 <hr>
@@ -240,11 +240,13 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="main-findings">Main findings</h2>
 <section id="high-performance-on-continuous-enzymatic-activity-assays" class="level3">
 <h3 class="anchored" data-anchor-id="high-performance-on-continuous-enzymatic-activity-assays">1. High Performance on Continuous Enzymatic Activity Assays</h3>
-<p><img src="DMS-benchmark.png" class="img-fluid"> Top zero-shot models capture strong functional signals in key metabolizing enzymes, achieving peak Spearman correlations between <strong><span class="math inline">\(\rho = 0.58\)</span> and <span class="math inline">\(0.72\)</span></strong> on <em>CYP2C9</em> and <em>NUDT15</em></p>
+<p><img src="DMS-benchmark.png" class="img-fluid"></p>
+<p>Top zero-shot models capture strong functional signals in key metabolizing enzymes, achieving peak Spearman correlations between <span class="math inline">\(\rho = 0.58\)</span> and <span class="math inline">\(0.72\)</span> on <em>CYP2C9</em> and <em>NUDT15</em></p>
 </section>
 <section id="zero-shot-plms-match-domain-specific-ensembles-on-clinical-tasks" class="level3">
 <h3 class="anchored" data-anchor-id="zero-shot-plms-match-domain-specific-ensembles-on-clinical-tasks">2. Zero-shot PLMs Match Domain-Specific Ensembles on Clinical Tasks</h3>
-<p><img src="star-allele-benchmark.png" class="img-fluid"> In clinical star-allele benchmarks, zero-shot models (CPT-1, AlphaMissense, AIDO.Protein-RAG) achieved <strong>macro AUROCs up to 0.86</strong>, matching specialized PGx frameworks like APF2 and PharmGScore across multiple functional tasks.</p>
+<p><img src="star-allele-benchmark.png" class="img-fluid"></p>
+<p>In clinical star-allele benchmarks, zero-shot models (CPT-1, AlphaMissense, AIDO.Protein-RAG) achieved <strong>macro AUROCs up to 0.86</strong>, matching specialized PGx frameworks like APF2 and PharmGScore across multiple functional tasks.</p>
 <hr>
 </section>
 </section>
@@ -267,11 +269,7 @@ window.Quarto = {
 </section>
 <section id="gallery" class="level2">
 <h2 class="anchored" data-anchor-id="gallery">Gallery</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 40%">
-<col style="width: 59%">
-</colgroup>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>Figure</th>
@@ -279,13 +277,14 @@ window.Quarto = {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td><img src="heatmap-CYP2C9.png" class="img-fluid"></td>
-<td>Positional functional landscape of CYP2C9. Each cell shows the</td>
-</tr>
 </tbody>
 </table>
-<p>experimentally measured effect of amino acid substitutions, and missing data are shown in gray. Colors represent functional classes derived from the DMS assay thresholds | | <img src="heatmap-AUC.png" class="img-fluid"> | The heatmap displays AUROC values for each gene-model pair. Labels on the left track the variant distribution (normal and increased vs.&nbsp;decreased and no function) for each gene. | | <img src="AUROC-CYP2C9.png" class="img-fluid"> | ROC curves for classifying extreme CYP2C9 enzyme activity phenotypes using DMS activity thresholds (&lt; 0.2 vs.&nbsp;&gt; 0.8).|</p>
+<div class="line-block"><img src="heatmap-CYP2C9.png" class="img-fluid"> | Positional functional landscape of CYP2C9.</div>
+<p>Each cell shows the experimentally measured effect of amino acid substitutions, and missing data are shown in gray. Colors represent functional classes derived from the DMS assay thresholds |</p>
+<div class="line-block"><img src="heatmap-AUC.png" class="img-fluid"> | The</div>
+<p>heatmap displays AUROC values for each gene-model pair. Labels on the left track the variant distribution (normal and increased vs.&nbsp;decreased and no function) for each gene. |</p>
+<div class="line-block"><img src="AUROC-CYP2C9.png" class="img-fluid"> | ROC curves for classifying extreme CYP2C9 enzyme activity</div>
+<p>phenotypes using DMS activity thresholds (&lt; 0.2 vs.&nbsp;&gt; 0.8).|</p>
 <hr>
 </section>
 <section id="repository" class="level2">

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Master’s Thesis – Reinout Schols | Statistician &amp; Data Scientist</title>
+<title>Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models – Reinout Schols | Statistician &amp; Data Scientist</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,8 +155,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Master’s Thesis</h1>
-            <p class="subtitle lead">Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models</p>
+      <h1 class="title">Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models</h1>
                       </div>
   </div>
     
@@ -240,12 +239,20 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="main-findings">Main findings</h2>
 <section id="high-performance-on-continuous-enzymatic-activity-assays" class="level3">
 <h3 class="anchored" data-anchor-id="high-performance-on-continuous-enzymatic-activity-assays">1. High Performance on Continuous Enzymatic Activity Assays</h3>
-<p><img src="DMS-benchmark.png" class="img-fluid"></p>
-<p>Top zero-shot models capture strong functional signals in key metabolizing enzymes, achieving peak Spearman correlations between <span class="math inline">\(\rho = 0.58\)</span> and <span class="math inline">\(0.72\)</span> on <em>CYP2C9</em> and <em>NUDT15</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="DMS-benchmark.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%"></p>
+</figure>
+</div>
+<p>Top zero-shot models capture strong functional signals in key metabolizing enzymes, achieving peak Spearman correlations between <span class="math inline">\(\rho = 0.58\)</span> and <span class="math inline">\(0.72\)</span> on <em>CYP2C9</em> and <em>NUDT15</em>.</p>
 </section>
 <section id="zero-shot-plms-match-domain-specific-ensembles-on-clinical-tasks" class="level3">
 <h3 class="anchored" data-anchor-id="zero-shot-plms-match-domain-specific-ensembles-on-clinical-tasks">2. Zero-shot PLMs Match Domain-Specific Ensembles on Clinical Tasks</h3>
-<p><img src="star-allele-benchmark.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="star-allele-benchmark.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%"></p>
+</figure>
+</div>
 <p>In clinical star-allele benchmarks, zero-shot models (CPT-1, AlphaMissense, AIDO.Protein-RAG) achieved <strong>macro AUROCs up to 0.86</strong>, matching specialized PGx frameworks like APF2 and PharmGScore across multiple functional tasks.</p>
 <hr>
 </section>
@@ -262,35 +269,44 @@ window.Quarto = {
 <section id="engineering-infrastructure" class="level2">
 <h2 class="anchored" data-anchor-id="engineering-infrastructure">Engineering &amp; Infrastructure</h2>
 <ul>
-<li><p><strong>HPC Scale:</strong> Executed zero-shot inference for 12 large models (including 16B parameter transformers like AIDO.Protein-RAG) on NVIDIA H100 GPUs using the Flemish Supercomputer (VSC).</p></li>
-<li><p><strong>Workflow Automation:</strong> Orchestrated reproducible data pipelines using Bash, Python, Jupyter Notebooks, Conda, and SLURM workload management.</p></li>
+<li><strong>HPC Scale:</strong> Executed zero-shot inference for 12 large models (including 16B parameter transformers like AIDO.Protein-RAG) on NVIDIA H100 GPUs using the Flemish Supercomputer (VSC).</li>
+<li><strong>Workflow Automation:</strong> Orchestrated reproducible data pipelines using Bash, Python, Jupyter Notebooks, Conda, and SLURM workload management.</li>
 </ul>
 <hr>
 </section>
 <section id="gallery" class="level2">
 <h2 class="anchored" data-anchor-id="gallery">Gallery</h2>
-<table class="caption-top">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Figure</th>
-<th>Description</th>
+<th style="text-align: left;">Figure</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="heatmap-CYP2C9.png" class="img-fluid" width="250"></td>
+<td style="text-align: left;">Positional functional landscape of CYP2C9. Each cell shows the experimentally measured effect of amino acid substitutions, and missing data are shown in gray. Colors represent functional classes derived from the DMS assay thresholds.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><img src="heatmap-AUC.png" class="img-fluid" width="250"></td>
+<td style="text-align: left;">The heatmap displays AUROC values for each gene-model pair. Labels on the left track the variant distribution (normal and increased vs.&nbsp;decreased and no function) for each gene.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><img src="AUROC-CYP2C9.png" class="img-fluid" width="250"></td>
+<td style="text-align: left;">ROC curves for classifying extreme CYP2C9 enzyme activity phenotypes using DMS activity thresholds (&lt; 0.2 vs.&nbsp;&gt; 0.8).</td>
+</tr>
 </tbody>
 </table>
-<div class="line-block"><img src="heatmap-CYP2C9.png" class="img-fluid"> | Positional functional landscape of CYP2C9.</div>
-<p>Each cell shows the experimentally measured effect of amino acid substitutions, and missing data are shown in gray. Colors represent functional classes derived from the DMS assay thresholds |</p>
-<div class="line-block"><img src="heatmap-AUC.png" class="img-fluid"> | The</div>
-<p>heatmap displays AUROC values for each gene-model pair. Labels on the left track the variant distribution (normal and increased vs.&nbsp;decreased and no function) for each gene. |</p>
-<div class="line-block"><img src="AUROC-CYP2C9.png" class="img-fluid"> | ROC curves for classifying extreme CYP2C9 enzyme activity</div>
-<p>phenotypes using DMS activity thresholds (&lt; 0.2 vs.&nbsp;&gt; 0.8).|</p>
 <hr>
 </section>
 <section id="repository" class="level2">
 <h2 class="anchored" data-anchor-id="repository">Repository</h2>
 <p><a href="https://github.com/ReinoutSchols/PGx-benchmark-protein-models">GitHub Repository</a></p>
-<hr>
 
 
 </section>

@@ -67,7 +67,7 @@
     "href": "MasterThesis.html#my-contribution",
     "title": "Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models",
     "section": "My contribution",
-    "text": "My contribution\nI independently developed and executed this research project from initial idea to final report.\nKey contributions:\n\nConducted an extensive literature review and identified an under-explored research direction.\nDefined the research question and designed a benchmark study to evaluate zero-shot protein language models in pharmacogenomics.\nCurated and processed open-source datasets.\nDeveloped reproducible data pipelines and statistical evaluation frameworks.\nPerformed large-scale model inference on HPC infrastructure.\nTranslated computational results into biological insights and research conclusions."
+    "text": "My contribution\nI independently developed and executed this research project from initial idea to final report.\nKey contributions:\n\nConducted an extensive literature review and identified an under-explored research direction.\nDefined the research question and designed a benchmark study to evaluate zero-shot protein language models in PGx.\nCurated and processed open-source datasets.\nDeveloped reproducible data pipelines and statistical evaluation frameworks.\nPerformed large-scale model inference on HPC infrastructure.\nTranslated computational results into biological insights and research conclusions."
   },
   {
     "objectID": "MasterThesis.html#the-project-required-independent-decision-making-critical-evaluation-of-existing-assumptions-and-collaboration-with-academic-and-clinical-supervisors.",
@@ -91,11 +91,11 @@
     "text": "Main findings\n\n1. High Performance on Continuous Enzymatic Activity Assays\n\n\n\n\n\nTop zero-shot models capture strong functional signals in key metabolizing enzymes, achieving peak Spearman correlations between \\(\\rho = 0.58\\) and \\(0.72\\) on CYP2C9 and NUDT15.\n\n\n2. Zero-shot PLMs Match Domain-Specific Ensembles on Clinical Tasks\n\n\n\n\n\nIn clinical star-allele benchmarks, zero-shot models (CPT-1, AlphaMissense, AIDO.Protein-RAG) achieved macro AUROCs up to 0.86, matching specialized PGx frameworks like APF2 and PharmGScore across multiple functional tasks."
   },
   {
-    "objectID": "MasterThesis.html#key-findings",
-    "href": "MasterThesis.html#key-findings",
+    "objectID": "MasterThesis.html#conclusion",
+    "href": "MasterThesis.html#conclusion",
     "title": "Zero-shot Prediction of Pharmacogenomic Variant Effects using Protein Language Models",
-    "section": "Key findings",
-    "text": "Key findings\n\nZero-shot protein models achieve moderate to strong correlations with experimental DMS measurements across multiple pharmacogenes.\nAIDO.Protein-RAG, CPT-1, and AlphaMissense consistently rank among the best-performing predictors.\nSeveral protein models match or outperform specialized PGx prediction frameworks on clinical variant classification tasks."
+    "section": "Conclusion",
+    "text": "Conclusion\n\nZero-shot protein models achieve moderate to strong correlations with continuous enzymatic activity.\nSeveral protein models match or outperform specialized PGx prediction frameworks on clinical variant classification tasks."
   },
   {
     "objectID": "MasterThesis.html#engineering-infrastructure",

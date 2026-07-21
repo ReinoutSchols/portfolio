@@ -44,8 +44,8 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Hello!",
+    "title": "Hi, I’m Reinout",
     "section": "",
-    "text": "Hi, I’m Reinout\nI’m a 2nd-year Master’s student at UHasselt in Statistics & Data Science, with a focus on Bioinformatics. My main interests are programming, data science/visualization and mathematics. I am passionate about solving problems and the communication of these results in a clear and creative manner.\nFor example, take a peep at this interactive dashboard about about air pollution that Sophie and me made last year for our data visualization course! https://dataviz-5zhh.onrender.com/.\nIn my free time, I like to:\n- Go to the gym\n- Cook and experiment in the kitchen\n- Play the mouth harmonica (my neighbors and girlfriend have mixed feelings)\n- Meditate\n\n\nSome snapshots\n\n\n\nBefore I fell in the water while sampling snails\n\n\n\n\n\nPlaying cornhole!\n\n\n\n\n\nI love animals"
+    "text": "I like solving problems with data.\nI recently graduated with a Master’s degree in Statistics & Data Science from UHasselt. My interests range from statistical modelling and machine learning to data visualization and bioinformatics. I enjoy exploring new ideas, building reproducible analyses, and turning complex results into something people can actually use.\nThis website contains some of the projects I’ve worked on, including interactive dashboards, machine learning research, and other data science projects.\nOne example is an interactive dashboard on air pollution that Sophie and I created for a data visualization course: https://dataviz-5zhh.onrender.com/\n\nSome snapshots\n\n\n\nBefore I fell in the water while sampling snails\n\n\n\n\n\nPlaying cornhole!\n\n\n\n\n\nI love animals"
   }
 ]
